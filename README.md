@@ -1,5 +1,8 @@
 # ssm-crud
-![JDK8](https://img.shields.io/badge/jdk-8-brightgreen.svg)<br>
+![JDK8](https://img.shields.io/badge/jdk-8-brightgreen.svg)![Spring](https://img.shields.io/badge/Sping-4-yellow.svg)
+![springMVC](https://img.shields.io/badge/springMVC--orange.svg)![Mybatis](https://img.shields.io/badge/MyBatis-3-yellowgreen.svg)
+![Mysql](https://img.shields.io/badge/Mysql-5.7-red.svg)![TomCat](https://img.shields.io/badge/Tomcat-8.5-lightgrey.svg)
+![Maven](https://img.shields.io/badge/Maven-3.3-blue.svg)<br>
 java+spring+springMVC+mybatis+jsp+maven+IntelliJ IDEA<br>
 
 ##[写一个详细过程在我的博客](https://my.oschina.net/finchxu/blog/3007984) <br>

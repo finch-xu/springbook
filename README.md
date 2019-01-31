@@ -15,15 +15,3 @@ java+spring+springMVC+mybatis+jsp+maven+IntelliJ IDEA<br>
 *DBCP<br>
 *Tomcat 8.5<br>
 
-##Mysql建表：<br>
-···SQL
-CREATE DATABASE books;<br>
-CREATE TABLE `bookadmin`  (<br>
-  `bid` int(11) NOT NULL AUTO_INCREMENT,<br>
-  `bn` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,<br>
-  `author` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,<br>
-  `press` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,<br>
-  PRIMARY KEY (`bid`) USING BTREE<br>
-) ENGINE = InnoDB AUTO_INCREMENT = 14 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;<br>
-···
-

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cn.book.mapper.BooksMapper">
+    <sql id="BASE_TABLE">
+        bookadmin
+    </sql>
+
+    <sql id="BASE_COLUMN">
+        bid,bn,author,press
+    </sql>
+    <!--<resultMap id="BaseResultMap" type="cn.book.pojo.Bookadmin">-->
+        <!--<id column="bid" property="bid" jdbcType="INTEGER" />-->
+        <!--<result column="bn" property="bn" jdbcType="VARCHAR" />-->
+        <!--<result column="author" property="author" jdbcType="VARCHAR" />-->
+        <!--<result column="press" property="press" jdbcType="VARCHAR" />-->
+
+
+    <!--</resultMap>-->
+
+    <!--<select id="showBooks" parameterType="string" resultType="cn.book.pojo.Bookadmindmin">-->
+        <!--select * from books where bookname like = "%"#{红楼梦}"%";-->
+    <!--</select>-->
+
+    <!--<select id="insert" resultType="Bookadmin">-->
+        <!--insert into bookadmin (bn,author,press) values (#{bn},#{author},#{press})-->
+    <!--</select>-->
+    <insert id="insert" parameterType="Bookadmin">
+        INSERT INTO
+        <include refid="BASE_TABLE"/>
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            bn,author,
+            <if test="press != null">
+                press,
+            </if>
+        </trim>
+        <trim prefix="VALUES(" suffix=")" suffixOverrides=",">
+            #{bn,jdbcType=VARCHAR},#{author,jdbcType=VARCHAR},
+            <if test="press != null">
+                #{press,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+
+    <select id="list" resultType="Bookadmin">
+        select * from bookadmin
+    </select>
+
+    <!--<select id="edit" resultType="Bookadmin">-->
+        <!--set -->
+    <!--</select>-->
+    <!--resultType="Bookadmin"-->
+</mapper>

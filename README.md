@@ -1,4 +1,4 @@
-# ssm-crud
+# springbook（ssm框架简单增删改查CRUD）
 ![JDK8](https://img.shields.io/badge/jdk-8-brightgreen.svg)![Spring](https://img.shields.io/badge/Sping-4-yellow.svg)
 ![springMVC](https://img.shields.io/badge/springMVC--orange.svg)![Mybatis](https://img.shields.io/badge/MyBatis-3-yellowgreen.svg)
 ![Mysql](https://img.shields.io/badge/Mysql-5.7-red.svg)![TomCat](https://img.shields.io/badge/Tomcat-8.5-lightgrey.svg)

@@ -7,7 +7,16 @@ import java.util.List;
 
 @Service
 public interface BooksService {
-    public List<Bookadmin> list();
+
+    List<Bookadmin> list();
 
     int insertBook(Bookadmin bookadmin);
+
+    int update(Bookadmin b);
+
+    int deleteBookByBid(Bookadmin bid);
+
+    Bookadmin getBookByBid(int bid);
+//
+//    int searchBookByBn(String bn);
 }

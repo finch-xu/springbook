@@ -44,12 +44,30 @@
         </trim>
     </insert>
 
+    <!--<select id="search" resultType="Bookadmin">-->
+        <!--select bn,author,press from bookadmin where bn = #{bn}-->
+    <!--</select>-->
+    <!---->
+    <select id="getBookByBid" resultType="Bookadmin">
+        select bid,bn,author,press from bookadmin where bid = #{bid}
+    </select>
+
     <select id="list" resultType="Bookadmin">
         select * from bookadmin
     </select>
 
-    <!--<select id="edit" resultType="Bookadmin">-->
-        <!--set -->
-    <!--</select>-->
+    <update id="update" parameterType="Bookadmin">
+        update
+        <include refid="BASE_TABLE"/>
+        set bn = #{bn},author = #{author},press = #{press}
+        where bid = #{bid}
+    </update>
+
+    <delete id="delete" parameterType="Bookadmin">
+        delete
+        from
+        <include refid="BASE_TABLE"/>
+        where bid = #{bid}
+    </delete>
     <!--resultType="Bookadmin"-->
 </mapper>

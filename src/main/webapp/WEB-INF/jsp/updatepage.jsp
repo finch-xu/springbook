@@ -3,22 +3,24 @@
   Created by IntelliJ IDEA.
   User: finch
   Date: 2019/1/31
-  Time: 0:45
+  Time: 14:16
   To change this template use File | Settings | File Templates.
-  添加数据jsp
+  更新和修改jsp
 --%>
 <%
     String path = request.getContextPath();
-    String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+    String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort()
+            + path + "/";
 %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>添加图书</title>
+    <title>更新&修改 图书信息</title>
 </head>
 <body>
-<br/>
-<form id="saveForm" action="${pageContext.request.contextPath}/a/addBooks" method="post">
+<h2>编辑图书信息！</h2>
+<form id="updateForm" action="${pageContext.request.contextPath}/a/update" method="post">
+    <input type="hidden" value="${bookadmin.bid}" name="bid"/>
     <table  align="center" bgcolor="aqua" border="1" cellpadding="0">
         <tr>
             <td>书名：</td>
@@ -30,9 +32,9 @@
         </tr>
         <tr>
             <td>出版社：</td>
-            <td><input type="text" value="${bookadmin.press}" name="press" /></td>
+            <td><input type="text" value="${bookadmin.press}" name="press"/></td>
         </tr>
-        <input type="submit" value="添加" />
+        <input type="submit" value="更新" />
     </table>
 </form>
 </body>

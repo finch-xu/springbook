@@ -27,7 +27,7 @@
         <!--<url-pattern>*.form</url-pattern>-->
     <!--</servlet-mapping>-->
     <welcome-file-list>
-        <welcome-file>listBooks.jsp</welcome-file>
+        <welcome-file>/a/listBooks.jsp</welcome-file>
     </welcome-file-list>
 
     <!-- 配置spring -->

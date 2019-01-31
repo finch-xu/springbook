@@ -5,7 +5,7 @@
 ![Maven](https://img.shields.io/badge/Maven-3.3-blue.svg)<br>
 java+spring+springMVC+mybatis+jsp+maven+IntelliJ IDEA<br>
 
-##[写一个详细过程在我的博客](https://my.oschina.net/finchxu/blog/3007984) <br>
+##[写了一个详细过程在我的博客https://my.oschina.net/finchxu/blog/3007984](https://my.oschina.net/finchxu/blog/3007984) <br>
 
 ##工作环境：<br>
 *Windows 10<br>

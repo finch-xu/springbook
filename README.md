@@ -18,4 +18,8 @@ java+spring+springMVC+mybatis+jsp+maven+IntelliJ IDEA<br>
 *DBCP<br>
 *Tomcat 8.5<br>
 
-![springbook](https://github.com/finch-xu/springbook/raw/master/springbook.gif)
+![springbook](https://github.com/finch-xu/springbook/raw/master/springbook.gif)<br>
+
+## License
+
+[MIT](http://opensource.org/licenses/MIT)

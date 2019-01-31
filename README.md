@@ -1,5 +1,5 @@
 # ssm-crud
-[![JDK8](https://img.shields.io/badge/jdk-8-brightgreen.svg)]<br>
+![JDK8](https://img.shields.io/badge/jdk-8-brightgreen.svg)<br>
 java+spring+springMVC+mybatis+jsp+maven+IntelliJ IDEA<br>
 
 ##[写一个详细过程在我的博客](https://my.oschina.net/finchxu/blog/3007984) <br>

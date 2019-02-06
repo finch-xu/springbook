@@ -21,7 +21,7 @@ java+spring+springMVC+mybatis+jsp+maven+IntelliJ IDEA<br>
 ![springbook](https://github.com/finch-xu/springbook/raw/master/springbook.gif)<br>
 
 ## 1.0版本更新：提供图片上传功能
-
+### [过程在我的博客https://my.oschina.net/finchxu/blog/3008564](https://my.oschina.net/finchxu/blog/3008564)
 
 ## License
 

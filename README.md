@@ -9,7 +9,7 @@ java+spring+springMVC+mybatis+jsp+maven+IntelliJ IDEA<br>
 
 ##工作环境：
 *Windows 10
-*jdk8(1.8)
+-jdk8(1.8)
 *IntelliJ IDEA <br>
 *spring 4 和 springMVC<br>
 *MySQL 5.7<br>

@@ -18,6 +18,7 @@
 <table align="center" bgcolor="aqua" border="1" cellpadding="0">
     <tr>
         <th width="140">图书BID</th>
+        <td width="140">图片</td>
         <th width="140">书名</th>
         <th width="140">作者</th>
         <th width="140">出版社</th>
@@ -27,6 +28,7 @@
     <c:forEach items="${bb}" var="b"> <%--varStatus="ct"--%>
         <tr>
             <td>${b.bid}</td>
+            <td><img src="/static/${b.pic}" width="100" height="100"/></td>
             <td>${b.bn}</td>
             <td>${b.author}</td>
             <td>${b.press}</td>
@@ -38,17 +40,21 @@
     <%--<td><a href="${pageContext.request.contextPath}/a/addBooks0">添加图书(跳转页面)</a></td>--%>
 </table>
 </form>
-<form id="saveForm" action="${pageContext.request.contextPath}/a/addBooks" method="post">
+<form id="saveForm" action="${pageContext.request.contextPath}/a/addBooks" enctype="multipart/form-data" method="post" modelAttribute="bookadmin">
 <table align="center" bgcolor="aqua" border="1" cellpadding="0">
     <tr>
+
         <th width="140">书名</th>
         <th width="140">作者</th>
         <th width="140">出版社</th>
+        <th width="140">图片</th>
     </tr>
     <tr>
+
         <td width="140"><input type="text" value="${bookadmin.bn}" name="bn"/></td>
         <td width="140"><input type="text" value="${bookadmin.author}" name="author"/></td>
         <td width="140"><input type="text" value="${bookadmin.press}" name="press" /></td>
+        <td width="140"><input type="file" name="file"/></td>
         <td width="140"><input type="submit" value="添加" /></td>
     </tr>
 </table>

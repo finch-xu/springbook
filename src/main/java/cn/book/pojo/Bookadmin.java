@@ -5,6 +5,7 @@ public class Bookadmin {
     String bn;
     String author;
     String press;
+    String pic;
 
     public Integer getBid() {
         return bid;
@@ -36,5 +37,13 @@ public class Bookadmin {
 
     public void setPress(String press) {
         this.press = press;
+    }
+
+    public String getPic() {
+        return pic;
+    }
+
+    public void setPic(String pic) {
+        this.pic = pic;
     }
 }

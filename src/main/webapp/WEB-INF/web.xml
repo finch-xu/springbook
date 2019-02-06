@@ -66,10 +66,13 @@
             <param-value>classpath:spring-mvc.xml</param-value>
         </init-param>
     </servlet>
-
+    <servlet-mapping>
+        <servlet-name>default</servlet-name>
+        <url-pattern>*.jpg</url-pattern>
+    </servlet-mapping>
     <servlet-mapping>
         <servlet-name>springmvc-web</servlet-name>
-        <url-pattern>/</url-pattern><!--*.action-->
+        <url-pattern>/</url-pattern>
     </servlet-mapping>
 
 </web-app>

@@ -18,7 +18,7 @@
 </head>
 <body>
 <br/>
-<form id="saveForm" action="${pageContext.request.contextPath}/a/addBooks" method="post">
+<form id="saveForm" action="${pageContext.request.contextPath}/a/addBooks" enctype="multipart/form-data" method="post">
     <table  align="center" bgcolor="aqua" border="1" cellpadding="0">
         <tr>
             <td>书名：</td>
@@ -31,6 +31,10 @@
         <tr>
             <td>出版社：</td>
             <td><input type="text" value="${bookadmin.press}" name="press" /></td>
+        </tr>
+        <tr>
+            <td>图片</td>
+            <td><input type="file" name="pic"/></td>
         </tr>
         <input type="submit" value="添加" />
     </table>

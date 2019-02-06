@@ -15,6 +15,5 @@ public interface BooksMapper{
     int delete(Bookadmin bid);
 
     Bookadmin getBookByBid(Integer bid);
-//
-//    int search(Bookadmin record);
+
 }

@@ -29,10 +29,10 @@
 		</tx:attributes>
 	</tx:advice>
 
-	<!--&lt;!&ndash; 切面 &ndash;&gt;-->
-	<!--<aop:config>-->
-		<!--<aop:advisor advice-ref="txAdvice"-->
-			<!--pointcut="execution(* cn.book.service.*.*(..))" />-->
-	<!--</aop:config>-->
+	<!-- 切面 -->
+	<aop:config>
+		<aop:advisor advice-ref="txAdvice"
+			pointcut="execution(* cn.book.service.*.*(..))" />
+	</aop:config>
 
 </beans>

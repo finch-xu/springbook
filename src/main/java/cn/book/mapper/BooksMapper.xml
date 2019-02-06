@@ -9,47 +9,34 @@
     </sql>
 
     <sql id="BASE_COLUMN">
-        bid,bn,author,press
+        bid,bn,author,press,pic
     </sql>
     <!--<resultMap id="BaseResultMap" type="cn.book.pojo.Bookadmin">-->
         <!--<id column="bid" property="bid" jdbcType="INTEGER" />-->
         <!--<result column="bn" property="bn" jdbcType="VARCHAR" />-->
         <!--<result column="author" property="author" jdbcType="VARCHAR" />-->
         <!--<result column="press" property="press" jdbcType="VARCHAR" />-->
-
-
+        <!--<result column="pic" property="pic" jdbcType="VARCHAR" />-->
     <!--</resultMap>-->
-
-    <!--<select id="showBooks" parameterType="string" resultType="cn.book.pojo.Bookadmindmin">-->
-        <!--select * from books where bookname like = "%"#{红楼梦}"%";-->
-    <!--</select>-->
-
-    <!--<select id="insert" resultType="Bookadmin">-->
-        <!--insert into bookadmin (bn,author,press) values (#{bn},#{author},#{press})-->
-    <!--</select>-->
     <insert id="insert" parameterType="Bookadmin">
         INSERT INTO
         <include refid="BASE_TABLE"/>
         <trim prefix="(" suffix=")" suffixOverrides=",">
-            bn,author,
-            <if test="press != null">
-                press,
+            bn,author,press,
+            <if test="pic != null">
+                pic
             </if>
         </trim>
         <trim prefix="VALUES(" suffix=")" suffixOverrides=",">
-            #{bn,jdbcType=VARCHAR},#{author,jdbcType=VARCHAR},
-            <if test="press != null">
-                #{press,jdbcType=VARCHAR},
+            #{bn,jdbcType=VARCHAR},#{author,jdbcType=VARCHAR},#{press,jdbcType=VARCHAR},
+            <if test="pic != null">
+                #{pic,jdbcType=VARCHAR}
             </if>
         </trim>
     </insert>
 
-    <!--<select id="search" resultType="Bookadmin">-->
-        <!--select bn,author,press from bookadmin where bn = #{bn}-->
-    <!--</select>-->
-    <!---->
     <select id="getBookByBid" resultType="Bookadmin">
-        select bid,bn,author,press from bookadmin where bid = #{bid}
+        select bid,bn,author,press,pic from bookadmin where bid = #{bid}
     </select>
 
     <select id="list" resultType="Bookadmin">
@@ -59,7 +46,7 @@
     <update id="update" parameterType="Bookadmin">
         update
         <include refid="BASE_TABLE"/>
-        set bn = #{bn},author = #{author},press = #{press}
+        set bn = #{bn},author = #{author},press = #{press},pic = #{pic}
         where bid = #{bid}
     </update>
 

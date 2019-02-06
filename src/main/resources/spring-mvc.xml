@@ -15,7 +15,7 @@
     </context:component-scan>
 
     <!-- 配置注解驱动，相当于同时使用最新处理器映射跟处理器适配器,对json数据响应提供支持 -->
-    <mvc:annotation-driven />
+    <mvc:annotation-driven enable-matrix-variables="true"/>
 
     <mvc:default-servlet-handler/>
 
@@ -24,5 +24,12 @@
         <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
         <property name="prefix" value="/WEB-INF/jsp/"/>
         <property name="suffix" value=".jsp"/>
+    </bean>
+    <!--配置文件/图片上传-->
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <!--上传的大小限制10M-->
+        <property name="maxUploadSize" value="10240000"/>
+        <!--<property name="maxInMemorySize" value="2048"/>-->
+        <property name="defaultEncoding" value="UTF-8" />
     </bean>
 </beans>

@@ -9,8 +9,10 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.io.IOException;
 import java.util.List;
 
 
@@ -53,9 +55,10 @@ public class BooksController {
     }
     //    第二步：把下边的页面数据返回给后端，再跳转到listBooks页面
     @RequestMapping(value = "/addBooks",method = RequestMethod.POST)
-    public String addBooks(Bookadmin bookadmin){
-        booksService.insertBook(bookadmin);
-        return "redirect:listBooks";
+    public String addBooks(Bookadmin bookadmin, MultipartFile file,Model model) {
+            booksService.insertBook(bookadmin, file);
+            model.addAttribute("bookadmin",bookadmin);
+            return ("redirect:listBooks");
     }
 
 //    <<<<<<<<<<<<<<<<<<<<<<<<<<<垃圾

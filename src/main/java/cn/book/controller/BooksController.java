@@ -61,6 +61,28 @@ public class BooksController {
             return ("redirect:listBooks");
     }
 
+    //    修改数据（两部分）
+    //    第一步：更新图书，先通过bid找到图书，并列在/updatepage/{bid}页面上，
+    @RequestMapping("/updatepage/{bid}")
+    public String updatepage(@PathVariable("bid") int bid,Model model){
+        model.addAttribute("bookadmin",booksService.getBookByBid(bid));
+        return "updatepage";
+    }
+    //    第二步：然后修改即可，在这里点更新提交数据给后端
+    @RequestMapping(value = "/update",method = RequestMethod.POST)
+    public String update(Bookadmin b, MultipartFile file){
+        booksService.update(b,file);
+        return "redirect:listBooks";
+    }
+
+    //    删除图书数据
+    @RequestMapping("/deleteBooksByBid")
+    public String deleteBooksByBid(Bookadmin bid){
+        booksService.deleteBookByBid(bid);
+        return "redirect:listBooks";
+    }
+
+
 //    <<<<<<<<<<<<<<<<<<<<<<<<<<<垃圾
 //    先跳转到这个页面，然后修改信息，点击提交，再使用上边的代码提交到后端
 //    @RequestMapping("/updateBooks0")
@@ -82,28 +104,4 @@ public class BooksController {
 //        return "redirect:listBooks";
 //    }
 //    垃圾>>>>>>>>>>>>>>>>>>>>>>>>>>
-
-    //    修改数据（两部分）
-    //    第一步：更新图书，先通过bid找到图书，并列在/updatepage/{bid}页面上，
-    @RequestMapping("/updatepage/{bid}")
-    public String updatepage(@PathVariable("bid") int bid,Model model){
-        model.addAttribute("bookadmin",booksService.getBookByBid(bid));
-    //  model.addAttribute("listBookss",booksService.list());
-        return "updatepage";
-    }
-    //    第二步：然后修改即可，在这里点更新提交数据给后端
-    @RequestMapping(value = "/update",method = RequestMethod.POST)
-    public String update(Bookadmin b){
-        booksService.update(b);
-        return "redirect:listBooks";
-    }
-
-    //    删除图书数据
-    @RequestMapping("/deleteBooksByBid")
-    public String deleteBooksByBid(Bookadmin bid){
-        booksService.deleteBookByBid(bid);
-        return "redirect:listBooks";
-    }
-
-
 }

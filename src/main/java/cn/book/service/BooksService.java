@@ -13,7 +13,7 @@ public interface BooksService {
 
     int insertBook(Bookadmin bookadmin, MultipartFile file);
 
-    int update(Bookadmin b);
+    int update(Bookadmin b, MultipartFile file);
 
     int deleteBookByBid(Bookadmin bid);
 

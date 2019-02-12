@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cn.book.mapper.UsersMapper">
+    <sql id="BASE_TABLE">
+        useradmin
+    </sql>
+
+    <sql id="BASE_COLUMN">
+        user_id,user_name,user_password
+    </sql>
+    <!--<select id="userLogin" resultType="useradmin" parameterType="map">-->
+        <!--select * from useradmin where user_name = #{user_name} and user_password = #{user_password}-->
+    <!--</select>-->
+    <select id="findUserByName" parameterType="string" resultType="Useradmin">
+        select * from useradmin where user_name = #{user_name}
+    </select>
+</mapper>

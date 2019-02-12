@@ -32,4 +32,10 @@
         <!--<property name="maxInMemorySize" value="2048"/>-->
         <property name="defaultEncoding" value="UTF-8" />
     </bean>
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <mvc:mapping path="/a/**"/>
+            <bean class="cn.book.controller.LoginInterceptor"/>
+        </mvc:interceptor>
+    </mvc:interceptors>
 </beans>

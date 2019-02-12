@@ -18,15 +18,15 @@ java+spring+springMVC+mybatis+jsp+maven+IntelliJ IDEA<br>
 
 ![springbook](https://github.com/finch-xu/springbook/raw/master/springbook.gif)<br>
 
-## 1.2版本更新：
+### 1.2版本更新：
 * 提供用户登录功能（设置session持续登录状态）
 * 访问权限控制（禁止未登录的用户访问指定页面）
 
-## 1.0版本更新：提供图片上传功能
-### [上传图片过程在我的博客https://my.oschina.net/finchxu/blog/3008564](https://my.oschina.net/finchxu/blog/3008564)
+### 1.0版本更新：提供图片上传功能
+##### [上传图片过程在我的博客https://my.oschina.net/finchxu/blog/3008564](https://my.oschina.net/finchxu/blog/3008564)
 
-## 0.9版本：基础增删改查
-### [写了一个详细过程在我的博客https://my.oschina.net/finchxu/blog/3007984](https://my.oschina.net/finchxu/blog/3007984)
+### 0.9版本：基础增删改查
+##### [写了一个详细过程在我的博客https://my.oschina.net/finchxu/blog/3007984](https://my.oschina.net/finchxu/blog/3007984)
 
 ## License
 

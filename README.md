@@ -8,15 +8,13 @@ SSM(spring+springmvc+mybatis)框架整合学习过程，每个阶段都上传成
 ## 工作环境：
 * Windows 10
 * jdk8(1.8)
-* IntelliJ IDEA <br>
-* spring 4 和 springMVC<br>
-* MySQL 5.7<br>
-* maven 3.3<br>
-* mybatis 3.4<br>
-* DBCP<br>
-* Tomcat 8.5<br>
-
-![springbook](https://github.com/finch-xu/springbook/raw/master/springbook.gif)<br>
+* IntelliJ IDEA 
+* spring 4 和 springMVC
+* MySQL 5.7
+* maven 3.3
+* mybatis 3.4
+* DBCP
+* Tomcat 8.5
 
 ### 1.2版本更新：
 * 提供用户登录功能（设置session持续登录状态）
@@ -27,7 +25,12 @@ SSM(spring+springmvc+mybatis)框架整合学习过程，每个阶段都上传成
 
 ### 0.9版本：基础增删改查
 ##### [写了一个详细过程在我的博客https://my.oschina.net/finchxu/blog/3007984](https://my.oschina.net/finchxu/blog/3007984)
+![springbook](https://github.com/finch-xu/springbook/raw/master/springbook.gif)<br>
 
-## License
+
+
+
+
+##### License
 
 [MIT](http://opensource.org/licenses/MIT)

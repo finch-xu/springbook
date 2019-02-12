@@ -4,7 +4,7 @@
 ![Mysql](https://img.shields.io/badge/Mysql-5.7-red.svg) ![TomCat](https://img.shields.io/badge/Tomcat-8.5-lightgrey.svg)
 ![Maven](https://img.shields.io/badge/Maven-3.3-blue.svg)<br>
 java+spring+springMVC+mybatis+jsp+maven+IntelliJ IDEA<br>
-## SSM(spring+springmvc+mybatis)框架整合学习过程，每个阶段都上传成不同的版本（顺便学学github的使用）
+SSM(spring+springmvc+mybatis)框架整合学习过程，每个阶段都上传成不同的版本（顺便学学github的使用）<br>
 ## 工作环境：
 * Windows 10
 * jdk8(1.8)

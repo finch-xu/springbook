@@ -12,8 +12,15 @@
 <html>
 <head>
     <title>listBooks</title>
+    <style>
+        #center{
+            margin: auto;
+        }
+    </style>
 </head>
-<body>
+<body bgcolor="#ffe4c4">
+<div id="center">
+<h2>这是<a href="${pageContext.request.contextPath}/home/logout">${useradmin.user_name}</a>的后台图书管理页面</h2>
 <form>
 <table align="center" bgcolor="aqua" border="1" cellpadding="0">
     <tr>
@@ -25,7 +32,7 @@
         <th width="140">修改</th>
         <th width="140">删除</th>
     </tr>
-    <c:forEach items="${bb}" var="b"> <%--varStatus="ct"--%>
+    <c:forEach items="${bb}" var="b">
         <tr>
             <td>${b.bid}</td>
             <td><img src="/static/${b.pic}" width="100" height="100"/></td>
@@ -59,6 +66,6 @@
     </tr>
 </table>
 </form>
-
+</div>
 </body>
 </html>

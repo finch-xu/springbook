@@ -36,15 +36,10 @@ public class BooksServiceImpl implements BooksService {
     @Override
     public int insertBook(Bookadmin bookadmin, MultipartFile file){
         if (file != null){
-
             String originalFilename = file.getOriginalFilename();
-
 //            String suffix = originalFilename.substring(originalFilename.lastIndexOf("."));
-
             String picName = UUID.randomUUID() + originalFilename;
-
 //            String picPath =  Constants.IMG_PATH + picName;
-
             File savePic = new File( "C:/Users/finch/IdeaProjects/springbook/src/main/webapp/WEB-INF/static/" + picName);
             try {
                 file.transferTo(savePic);
@@ -53,13 +48,24 @@ public class BooksServiceImpl implements BooksService {
                 e.printStackTrace();
             }
         }
-
         return booksMapper.insert(bookadmin);
     }
 
     //    更新数据
     @Override
-    public int update(Bookadmin b){
+    public int update(Bookadmin b,MultipartFile file){
+//        if (file != null){
+//            String originalFilename = file.getOriginalFilename();
+//            String picName = UUID.randomUUID() + originalFilename;
+//            File updatePic = new File("C:/Users/finch/IdeaProjects/springbook/src/main/webapp/WEB-INF/static/" + picName);
+//            try{
+//                file.transferTo(updatePic);
+//                bookadmin.setPic(picName);
+//
+//            } catch (IOException e) {
+//                e.printStackTrace();
+//            }
+//        }
         return booksMapper.update(b);
     }
 

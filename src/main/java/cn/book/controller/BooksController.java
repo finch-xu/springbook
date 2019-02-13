@@ -82,7 +82,12 @@ public class BooksController {
         return "redirect:listBooks";
     }
 
-
+    //列出单个图书的详情
+    @RequestMapping("/bookDetail/{bid}")
+    public String detailByBid(@PathVariable("bid") int bid,Model model){
+        model.addAttribute("bookDetail",booksService.getBookByBid(bid));
+        return "bookDetail";
+    }
 //    <<<<<<<<<<<<<<<<<<<<<<<<<<<垃圾
 //    先跳转到这个页面，然后修改信息，点击提交，再使用上边的代码提交到后端
 //    @RequestMapping("/updateBooks0")

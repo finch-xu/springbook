@@ -22,6 +22,9 @@
             bottom: 0;
         }
     </style>
+    <link rel="stylesheet" type="text/css" href="static/lib/bootstrap43/css/bootstrap.min.css"/>
+    <script type="text/javascript" src="static/js/jquery3.js"></script>
+    <script src="static/lib/bootstrap43/js/bootstrap.min.js"></script>
 </head>
 <body bgcolor="#ffe4c4">
 <div id="center">
@@ -30,14 +33,14 @@
         <p>${message }</p>
     </div>
     <form id="login" action="${pageContext.request.contextPath}/home/login" method="post">
-        <table>
+        <table class="table">
             <tr>
                 <td>用户名：</td>
-                <td><input type="text" id="user_name" name="user_name"/></td>
+                <td><input type="text" id="user_name" name="user_name" class="form-control"/></td>
             </tr>
             <tr>
                 <td>密码：</td>
-                <td><input type="password" id="user_password" name="user_password"/></td>
+                <td><input type="password" id="user_password" name="user_password" class="form-control"/></td>
             </tr>
             <tr>
                 <td><input type="submit" value="点击登录" id="login0"/></td>

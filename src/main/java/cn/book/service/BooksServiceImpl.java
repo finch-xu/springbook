@@ -40,7 +40,7 @@ public class BooksServiceImpl implements BooksService {
 //            String suffix = originalFilename.substring(originalFilename.lastIndexOf("."));
             String picName = UUID.randomUUID() + originalFilename;
 //            String picPath =  Constants.IMG_PATH + picName;
-            File savePic = new File( "C:/Users/finch/IdeaProjects/springbook/src/main/webapp/WEB-INF/static/" + picName);
+            File savePic = new File( "C:/Users/finch/IdeaProjects/springbook/src/main/webapp/WEB-INF/static/img/" + picName);
             try {
                 file.transferTo(savePic);
                 bookadmin.setPic(picName);

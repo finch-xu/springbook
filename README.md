@@ -29,7 +29,7 @@ SSM(spring+springmvc+mybatis)框架整合学习过程，每个阶段都上传成
 
 ### 0.9版本：基础增删改查
 ##### [写了一个详细过程在我的博客https://my.oschina.net/finchxu/blog/3007984](https://my.oschina.net/finchxu/blog/3007984)
-![springbook](https://github.com/finch-xu/springbook/raw/master/springbook.gif)<br>
+
 
 
 

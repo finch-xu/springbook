@@ -19,6 +19,7 @@ SSM(spring+springmvc+mybatis)框架整合学习过程，每个阶段都上传成
 ### 1.2.6更新：
 * 制作navbar，添加图书详细信息页面
 * 修改登录的BUG
+##### [如何编写登录和过滤器的过程在这里https://my.oschina.net/finchxu/blog/3010138](https://my.oschina.net/finchxu/blog/3010138)
 
 ### 1.2版本更新：
 * 提供用户登录功能（设置session持续登录状态）

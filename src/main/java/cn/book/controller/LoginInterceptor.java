@@ -1,6 +1,8 @@
 package cn.book.controller;
 
 import cn.book.pojo.Useradmin;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -29,7 +31,18 @@ public class LoginInterceptor implements HandlerInterceptor {
 
         return false;
     }
-
+//    @Autowired
+//    private RedisTemplate<String,Object> redisTemplate;
+//
+//    @Override
+//    public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
+//        String uri = request.getRequestURI();
+//        if (uri.indexOf("/home/userloginRedis") >= 0){
+//            return true;
+//        }
+//        redisTemplate.opsForValue().get(useradmin);
+//        Useradmin useradmin = r
+//    }
     @Override
     public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) throws Exception {
 

@@ -34,7 +34,7 @@
         <%--这里显示用户或者密码错误的信息--%>
         <p>${message }</p>
     </div>
-    <form id="login" action="${pageContext.request.contextPath}/home/login" method="post">
+    <form id="login" action="${pageContext.request.contextPath}/home/loginUseRedis" method="post">
         <table class="table">
             <tr>
                 <td>用户名：</td>
@@ -49,6 +49,7 @@
             </tr>
         </table>
     </form>
+    <a href="${pageContext.request.contextPath}/home/set">set</a>
 </div>
 </body>
 </html>

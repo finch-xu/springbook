@@ -28,5 +28,4 @@ public class Useradmin {
     public void setUser_password(String user_password) {
         this.user_password = user_password;
     }
-
 }

@@ -16,6 +16,9 @@ SSM(spring+springmvc+mybatis)框架整合学习过程，每个阶段都上传成
 * DBCP
 * Tomcat 8.5
 
+### 1.2.7更新：
+* 添加入库单功能，ajax传递数组，后台入库
+
 ### 1.2.6更新：
 * 制作navbar，添加图书详细信息页面
 * 修改登录的BUG

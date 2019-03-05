@@ -18,6 +18,6 @@ public interface BooksService {
     int deleteBookByBid(Bookadmin bid);
 
     Bookadmin getBookByBid(int bid);
-//
-//    int searchBookByBn(String bn);
+
+    int count();
 }

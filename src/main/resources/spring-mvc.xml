@@ -2,10 +2,11 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
        xmlns:context="http://www.springframework.org/schema/context"
-       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:cache="http://www.springframework.org/schema/cache"
+       xmlns:c="http://www.springframework.org/schema/c"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
         http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd
-        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd http://www.springframework.org/schema/cache http://www.springframework.org/schema/cache/spring-cache.xsd">
 
     <!-- 配置@controller扫描包 -->
     <!--<context:component-scan base-package="cn.book.controller" />-->
@@ -13,11 +14,28 @@
     <context:component-scan base-package="cn.book.controller">
         <context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
     </context:component-scan>
-
+    <!--&lt;!&ndash; 开启缓存注解 &ndash;&gt;-->
+    <!--<cache:annotation-driven cache-manager="cacheManager"/>-->
+    <!--&lt;!&ndash;自动扫描工具类&ndash;&gt;-->
+    <!--<context:component-scan base-package="cn.book.util"/>-->
     <!-- 配置注解驱动，相当于同时使用最新处理器映射跟处理器适配器,对json数据响应提供支持 -->
     <mvc:annotation-driven enable-matrix-variables="true"/>
 
     <mvc:default-servlet-handler/>
+
+    <!--配置fastjson-->
+    <mvc:annotation-driven>
+        <mvc:message-converters register-defaults="true">
+            <!-- 避免IE执行AJAX时,返回JSON出现下载文件 -->
+            <bean id="fastJsonHttpMessageConverter" class="com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter">
+                <property name="supportedMediaTypes">
+                    <list>
+                        <value>application/json;charset=UTF-8</value>
+                    </list>
+                </property>
+            </bean>
+        </mvc:message-converters>
+    </mvc:annotation-driven>
 
     <!-- 配置视图解析器 -->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
@@ -32,10 +50,16 @@
         <!--<property name="maxInMemorySize" value="2048"/>-->
         <property name="defaultEncoding" value="UTF-8" />
     </bean>
+
+    <!--登录权限拦截器-->
     <mvc:interceptors>
         <mvc:interceptor>
             <mvc:mapping path="/a/**"/>
             <bean class="cn.book.controller.LoginInterceptor"/>
         </mvc:interceptor>
     </mvc:interceptors>
+
+
+    <!--&lt;!&ndash; 缓存管理器: 使用redis 当做缓存 &ndash;&gt;-->
+    <!--<bean id="cacheManager" class="org.springframework.data.redis.cache.RedisCacheManager" c:template-ref ="redisTemplate"/>-->
 </beans>

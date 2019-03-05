@@ -19,28 +19,7 @@
     <script src="https://cdn.bootcss.com/twitter-bootstrap/4.2.1/js/bootstrap.min.js"></script>
 </head>
 <body bgcolor="#ffe4c4">
-<nav class="navbar navbar-expand-lg bg-info navbar-dark">
-    <ul class="nav navbar-nav mr-auto">
-        <li class="nav-item"><a class="navbar-brand" href="#">SpringBook</a></li>
-        <li class="nav-item active"><a class="nav-link" href="${pageContext.request.contextPath}/a/listBooks">图书列表</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">关于</a></li>
-    </ul>
-    <ul class="nav navbar-right">
-        <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" id="navbardropdown" data-toggle="dropdown" href="#">
-                用户：${useradmin.user_name}
-            </a>
-            <div class="dropdown-menu bg-info">
-                <a class="nav-link dropdown-item" href="#">
-                    账户设置
-                </a>
-                <a class="nav-link dropdown-item" href="${pageContext.request.contextPath}/home/logout">
-                    登出
-                </a>
-            </div>
-        </li>
-    </ul>
-</nav>
+<%@include file="navbar.jsp"%>
 <form id="bookDetailForm m-auto">
     <input type="hidden" value="${bookadmin.bid}" name="bid"/>
     <table  align="center" bgcolor="aqua" border="1" cellpadding="0">
@@ -68,7 +47,14 @@
             <td>${bookDetail.press}</td>
         </tr>
         <tr>
-            <td><a href="${pageContext.request.contextPath}/a/updatepage">修改图书信息</a> </td>
+            <td>单价：</td>
+            <td>${bookDetail.price}</td>
+        </tr>
+        <tr>
+            <td><a href="${pageContext.request.contextPath}/a/addToCart?bid=${bookadmin.bid}">加购物车</a></td>
+        </tr>
+        <tr>
+            <td><a href="${pageContext.request.contextPath}/a/updatepage/${bookadmin.bid}">修改图书信息</a> </td>
             <td><a href="${pageContext.request.contextPath}/a/listBooks">返回到图书列表</a></td>
         </tr>
     </table>

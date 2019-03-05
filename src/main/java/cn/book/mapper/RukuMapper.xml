@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cn.book.mapper.RukuMapper">
+    <sql id="BASE_TABLE">
+        ruku
+    </sql>
+
+    <sql id="BASE_COLUMN">
+        rukuid,ruku_bn,ruku_author,ruku_press,ruku_price,ruku_date,ruku_n
+    </sql>
+    <!--<select id="findUserByName" parameterType="string" resultType="Ruku">-->
+        <!--select * from useradmin where user_name = #{user_name}-->
+    <!--</select>-->
+    <insert id="insertRuku" parameterType="Ruku">
+        insert into ruku
+        (ruku_bn,ruku_author,ruku_press,ruku_price,ruku_date,ruku_n)
+         values
+         (
+         #{ruku_bn,jdbcType=VARCHAR},
+         #{ruku_author,jdbcType=VARCHAR},
+         #{ruku_press,jdbcType=VARCHAR},
+         #{ruku_price,jdbcType=DOUBLE},
+         #{ruku_date,jdbcType=VARCHAR},
+         #{ruku_n,jdbcType=VARCHAR}
+         )
+    </insert>
+</mapper>

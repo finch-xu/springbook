@@ -12,8 +12,13 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpServletRequest;
+import java.awt.print.Book;
 import java.io.IOException;
+import java.math.BigDecimal;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 
 @Controller
@@ -88,6 +93,59 @@ public class BooksController {
         model.addAttribute("bookDetail",booksService.getBookByBid(bid));
         return "bookDetail";
     }
+
+    //添加到购物车，利用session存储在服务器
+    @RequestMapping("/addToCart")
+    public String addToCart(Bookadmin bookadmin, HttpServletRequest request,Model model){
+        Map<Bookadmin,Integer> bookCart = (Map<Bookadmin,Integer>)request.getSession(false).getAttribute("useradmin");
+        if (bookCart == null){
+            bookCart = new HashMap<>();
+            bookadmin = booksService.getBookByBid(bookadmin.getBid());
+            bookCart.put(bookadmin,1);
+            request.getSession(false).setAttribute("useradmin",bookCart);
+        }else {
+            Integer alreadyInBookCart = bookCart.get(bookadmin);
+            if (alreadyInBookCart == null){
+                bookadmin = booksService.getBookByBid(bookadmin.getBid());
+                bookCart.put(bookadmin,1);
+            }else {
+                bookCart.put(bookadmin,1+alreadyInBookCart);
+            }
+        }
+        BigDecimal sum = new BigDecimal(0);
+        for (Bookadmin bc : bookCart.keySet()){
+            sum = sum.add(bc.getPrice().multiply(new BigDecimal(bookCart.get(bc))));
+        }
+        model.addAttribute("sum",sum);
+        return "bookCart";
+    }
+
+//    //添加到购物车，利用session存储在服务器
+//    @RequestMapping("/addToCart")
+//    public String addToCart(Bookadmin bookadmin, HttpServletRequest request,Model model){
+//        Map<Bookadmin,Integer> bookCart = (Map<Bookadmin,Integer>)request.getSession(false).getAttribute("bookCart");
+//        if (bookCart == null){
+//            bookCart = new HashMap<>();
+//            bookadmin = booksService.getBookByBid(bookadmin.getBid());
+//            bookCart.put(bookadmin,1);
+//            request.getSession(true).setAttribute("bookCart",bookCart);
+//        }else {
+//            Integer alreadyInBookCart = bookCart.get(bookadmin);
+//            if (alreadyInBookCart == null){
+//                bookadmin = booksService.getBookByBid(bookadmin.getBid());
+//                bookCart.put(bookadmin,1);
+//            }else {
+//                bookCart.put(bookadmin,1+alreadyInBookCart);
+//            }
+//        }
+//        BigDecimal sum = new BigDecimal(0);
+//        for (Bookadmin bc : bookCart.keySet()){
+//            sum = sum.add(bc.getPrice().multiply(new BigDecimal(bookCart.get(bc))));
+//        }
+//        model.addAttribute("sum",sum);
+//        return "bookCart";
+//    }
+
 //    <<<<<<<<<<<<<<<<<<<<<<<<<<<垃圾
 //    先跳转到这个页面，然后修改信息，点击提交，再使用上边的代码提交到后端
 //    @RequestMapping("/updateBooks0")

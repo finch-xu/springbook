@@ -16,4 +16,5 @@ public interface BooksMapper{
 
     Bookadmin getBookByBid(Integer bid);
 
+    int count();
 }

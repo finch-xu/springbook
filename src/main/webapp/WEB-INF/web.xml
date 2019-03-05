@@ -5,7 +5,7 @@
          version="4.0">
     <display-name>Archetype Created Web Application</display-name>
     <welcome-file-list>
-        <welcome-file>/a/listBooks.jsp</welcome-file>
+        <welcome-file></welcome-file>
     </welcome-file-list>
 
     <!-- 配置spring -->
@@ -44,10 +44,10 @@
             <param-value>classpath:spring-mvc.xml</param-value>
         </init-param>
     </servlet>
-    <servlet-mapping>
-        <servlet-name>default</servlet-name>
-        <url-pattern>*.jpg</url-pattern>
-    </servlet-mapping>
+    <!--<servlet-mapping>-->
+        <!--<servlet-name>default</servlet-name>-->
+        <!--<url-pattern>*.jpg</url-pattern>-->
+    <!--</servlet-mapping>-->
     <servlet-mapping>
         <servlet-name>springmvc-web</servlet-name>
         <url-pattern>/</url-pattern>

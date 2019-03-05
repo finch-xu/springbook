@@ -21,40 +21,22 @@
     <script src="https://cdn.bootcss.com/twitter-bootstrap/4.2.1/js/bootstrap.min.js"></script>
 </head>
 <body bgcolor="#ffe4c4">
-<nav class="navbar navbar-expand-lg bg-info navbar-dark">
-    <ul class="nav navbar-nav mr-auto">
-        <li class="nav-item"><a class="navbar-brand" href="#">SpringBook</a></li>
-        <li class="nav-item active"><a class="nav-link" href="${pageContext.request.contextPath}/a/listBooks">图书列表</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">关于</a></li>
-    </ul>
-    <ul class="nav navbar-right">
-        <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" id="navbardropdown" data-toggle="dropdown" href="#">
-                用户：${useradmin.user_name}
-            </a>
-            <div class="dropdown-menu bg-info">
-                <a class="nav-link dropdown-item" href="#">
-                    账户设置
-                </a>
-                <a class="nav-link dropdown-item" href="${pageContext.request.contextPath}/home/logout">
-                    登出
-                </a>
-            </div>
-        </li>
-    </ul>
-</nav>
+<%@include file="navbar.jsp"%>
 <div>
+    <a href="${pageContext.request.contextPath}/a/set">set</a>
 <form>
 <table class="table table-striped m-auto">
     <%--align="center" bgcolor="aqua" border="1" cellpadding="0"--%>
     <tr>
-        <th width="140">图书BID</th>
-        <td width="140">图片</td>
-        <th width="140">书名(点击查看详情)</th>
-        <th width="140">作者</th>
-        <th width="140">出版社</th>
-        <th width="140">修改</th>
-        <th width="140">删除</th>
+        <th>图书BID</th>
+        <td>图片</td>
+        <th>书名(点击查看详情)</th>
+        <th>作者</th>
+        <th>出版社</th>
+        <th>单价</th>
+        <th>修改</th>
+        <th>删除</th>
+        <td>加购物车</td>
     </tr>
     <c:forEach items="${bb}" var="b">
         <tr>
@@ -63,8 +45,10 @@
             <td><a href="${pageContext.request.contextPath}/a/bookDetail/${b.bid}">${b.bn}</a></td>
             <td>${b.author}</td>
             <td>${b.press}</td>
+            <td>${b.price}</td>
             <td><a href="${pageContext.request.contextPath}/a/updatepage/${b.bid}">修改</a></td>
             <td><a href="${pageContext.request.contextPath}/a/deleteBooksByBid?bid=${b.bid}" onclick='return confirm("确认要删除吗?")'>删除</a></td>
+            <td><a href="${pageContext.request.contextPath}/a/addToCart?bid=${b.bid}">加购物车</a></td>
         </tr>
     </c:forEach>
 </table>
@@ -75,12 +59,14 @@
         <th width="140">书名</th>
         <th width="140">作者</th>
         <th width="140">出版社</th>
+        <td width="140">单价</td>
         <th width="140">图片</th>
     </tr>
     <tr>
         <td width="140"><input type="text" value="${bookadmin.bn}" name="bn"/></td>
         <td width="140"><input type="text" value="${bookadmin.author}" name="author"/></td>
         <td width="140"><input type="text" value="${bookadmin.press}" name="press" /></td>
+        <td width="140"><input type="text" value="${bookadmin.price}" name="price" /></td>
         <td width="140"><input type="file" name="file"/></td>
         <td width="140"><input type="submit" value="添加" /></td>
     </tr>

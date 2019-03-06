@@ -53,6 +53,7 @@
                 dataType:"json",
                 data: JSON.stringify(jsonStr),
             });
+            alert('成功入库!');
         }
     </script>
 </head>
@@ -76,27 +77,28 @@
         <%--图片：<input type="file" name="ruku_pic"><br>--%>
         入库时间：<%=now %><input type="hidden" name="ruku_date" value="<%=now %>"><br>
         入库数量：<input type="text" name="ruku_n"><br>
-        2.
-        书名：<input type="text" name="ruku_bn"><br>
-        作者：<input type="text" name="ruku_author"><br>
-        出版社：<input type="text" name="ruku_press"><br>
-        入库价格：<input type="text" name="ruku_price"><br>
-        <%--图片：<input type="file" name="ruku_pic"><br>--%>
-        入库时间：<%=now %><input type="hidden" name="ruku_date" value="<%=now %>"><br>
-        入库数量：<input type="text" name="ruku_n"><br>
-        3.
-        书名：<input type="text" name="ruku_bn"><br>
-        作者：<input type="text" name="ruku_author"><br>
-        出版社：<input type="text" name="ruku_press"><br>
-        入库价格：<input type="text" name="ruku_price"><br>
-        <%--图片：<input type="file" name="ruku_pic"><br>--%>
-        入库时间：<%=now %><input type="hidden" name="ruku_date" value="<%=now %>"><br>
-        入库数量：<input type="text" name="ruku_n"><br>
+        <%--2.--%>
+        <%--书名：<input type="text" name="ruku_bn"><br>--%>
+        <%--作者：<input type="text" name="ruku_author"><br>--%>
+        <%--出版社：<input type="text" name="ruku_press"><br>--%>
+        <%--入库价格：<input type="text" name="ruku_price"><br>--%>
+        <%--&lt;%&ndash;图片：<input type="file" name="ruku_pic"><br>&ndash;%&gt;--%>
+        <%--入库时间：<%=now %><input type="hidden" name="ruku_date" value="<%=now %>"><br>--%>
+        <%--入库数量：<input type="text" name="ruku_n"><br>--%>
+        <%--3.--%>
+        <%--书名：<input type="text" name="ruku_bn"><br>--%>
+        <%--作者：<input type="text" name="ruku_author"><br>--%>
+        <%--出版社：<input type="text" name="ruku_press"><br>--%>
+        <%--入库价格：<input type="text" name="ruku_price"><br>--%>
+        <%--&lt;%&ndash;图片：<input type="file" name="ruku_pic"><br>&ndash;%&gt;--%>
+        <%--入库时间：<%=now %><input type="hidden" name="ruku_date" value="<%=now %>"><br>--%>
+        <%--入库数量：<input type="text" name="ruku_n"><br>--%>
 
         <%--<input type="submit" value="提交入库单" />--%>
         <input type="button" value="submit" onclick="ruku();">
         </table>
     </form>
+    <a href="${pageContext.request.contextPath}/a/rukuHistory">前往查看库存</a>
 </div>
 </body>
 <%--1.--%>

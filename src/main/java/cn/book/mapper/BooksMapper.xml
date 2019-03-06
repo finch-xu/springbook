@@ -9,7 +9,7 @@
     </sql>
 
     <sql id="BASE_COLUMN">
-        bid,bn,author,press,price,pic
+        bid,bn,author,press,price,n,pic
     </sql>
     <!--<resultMap id="BaseResultMap" type="cn.book.pojo.Bookadmin">-->
         <!--<id column="bid" property="bid" jdbcType="INTEGER" />-->
@@ -22,13 +22,13 @@
         INSERT INTO
         <include refid="BASE_TABLE"/>
         <trim prefix="(" suffix=")" suffixOverrides=",">
-            bn,author,press,price,
+            bn,author,press,price,n,
             <if test="pic != null">
                 pic
             </if>
         </trim>
         <trim prefix="VALUES(" suffix=")" suffixOverrides=",">
-            #{bn,jdbcType=VARCHAR},#{author,jdbcType=VARCHAR},#{press,jdbcType=VARCHAR},#{price,jdbcType=DOUBLE},
+            #{bn,jdbcType=VARCHAR},#{author,jdbcType=VARCHAR},#{press,jdbcType=VARCHAR},#{price,jdbcType=DOUBLE},#{n,jdbcType=VARCHAR},
             <if test="pic != null">
                 #{pic,jdbcType=VARCHAR}
             </if>
@@ -36,7 +36,7 @@
     </insert>
 
     <select id="getBookByBid" resultType="Bookadmin">
-        select bid,bn,author,press,price,pic from bookadmin where bid = #{bid}
+        select bid,bn,author,press,price,n,pic from bookadmin where bid = #{bid}
     </select>
 
     <select id="list" resultType="Bookadmin">
@@ -46,7 +46,7 @@
     <update id="update" parameterType="Bookadmin">
         update
         <include refid="BASE_TABLE"/>
-        set bn = #{bn},author = #{author},press = #{press},price = #{price},pic = #{pic}
+        set bn = #{bn},author = #{author},press = #{press},price = #{price},n = #{n},pic = #{pic}
         where bid = #{bid}
     </update>
 

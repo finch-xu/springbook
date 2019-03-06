@@ -9,6 +9,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.List;
 import java.util.UUID;
 
 @Service
@@ -18,11 +19,28 @@ public class RukuServiceImpl implements RukuService{
     @Autowired
     RukuMapper rukuMapper;
 
-
     @Override
     public int insertRuku(Ruku ruku){
         return rukuMapper.insertRuku(ruku);
     }
+    @Override
+    public int updateRuku(Ruku r){
+        return rukuMapper.updateRuku(r);
+    }
+    @Override
+    public List<Ruku> listRuku(){
+        List<Ruku> rukuList = rukuMapper.listRuku();
+        return rukuList;
+    }
+    @Override
+    public int deleteRukuByRukuid(Ruku rukuid) {
+        return rukuMapper.deleteRuku(rukuid);
+    }
+    @Override
+    public Ruku getRukuByRukuid(int rukuid){
+        return rukuMapper.getRukuByRukuid(rukuid);
+    }
+
 //    @Override
 //    public int insertRuku(Ruku ruku, MultipartFile file){
 //        if (file != null){

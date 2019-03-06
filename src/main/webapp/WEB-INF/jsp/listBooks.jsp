@@ -34,6 +34,7 @@
         <th>作者</th>
         <th>出版社</th>
         <th>单价</th>
+        <th>数量</th>
         <th>修改</th>
         <th>删除</th>
         <td>加购物车</td>
@@ -46,6 +47,7 @@
             <td>${b.author}</td>
             <td>${b.press}</td>
             <td>${b.price}</td>
+            <td>${b.n}</td>
             <td><a href="${pageContext.request.contextPath}/a/updatepage/${b.bid}">修改</a></td>
             <td><a href="${pageContext.request.contextPath}/a/deleteBooksByBid?bid=${b.bid}" onclick='return confirm("确认要删除吗?")'>删除</a></td>
             <td><a href="${pageContext.request.contextPath}/a/addToCart?bid=${b.bid}">加购物车</a></td>

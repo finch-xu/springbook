@@ -8,6 +8,7 @@ public class Bookadmin {
     String author;
     String press;
     BigDecimal price;
+    String n;
     String pic;
 
     public Integer getBid() {
@@ -48,6 +49,14 @@ public class Bookadmin {
 
     public void setPrice(BigDecimal price) {
         this.price = price;
+    }
+
+    public String getN() {
+        return n;
+    }
+
+    public void setN(String n) {
+        this.n = n;
     }
 
     public String getPic() {

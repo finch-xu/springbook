@@ -7,13 +7,9 @@
     <sql id="BASE_TABLE">
         ruku
     </sql>
-
     <sql id="BASE_COLUMN">
         rukuid,ruku_bn,ruku_author,ruku_press,ruku_price,ruku_date,ruku_n
     </sql>
-    <!--<select id="findUserByName" parameterType="string" resultType="Ruku">-->
-        <!--select * from useradmin where user_name = #{user_name}-->
-    <!--</select>-->
     <insert id="insertRuku" parameterType="Ruku">
         insert into ruku
         (ruku_bn,ruku_author,ruku_press,ruku_price,ruku_date,ruku_n)
@@ -27,4 +23,31 @@
          #{ruku_n,jdbcType=VARCHAR}
          )
     </insert>
+    <!--&lt;!&ndash;把入库单的商品上架到图书表单&ndash;&gt;-->
+    <!--<insert id="insertRukuDo" parameterType="Ruku">-->
+        <!--insert into bookadmin-->
+        <!--(bookadmin.bn,bookadmin.author,bookadmin.press,bookadmin.price,bookadmin.n)-->
+         <!--select-->
+         <!--ruku.ruku_bn,-->
+         <!--ruku_author,-->
+         <!--ruku_press,-->
+         <!--ruku_price,-->
+         <!--ruku_n-->
+         <!--where ruku.rukuid = #{rukuid}-->
+    <!--</insert>-->
+    <select id="listRuku" resultType="Ruku">
+        select * from ruku
+    </select>
+    <select id="getRukuByRukuid" resultType="Ruku">
+        select ruku_bn,ruku_author,ruku_press,ruku_price,ruku_date,ruku_n from ruku where rukuid = #{rukuid}
+    </select>
+    <update id="updateRuku" parameterType="Ruku">
+        update
+        ruku
+        set ruku_bn = #{ruku_bn},ruku_author = #{ruku_author},ruku_press = #{ruku_press},ruku_price = #{ruku_price},ruku_date = #{ruku_date},ruku_n = #{ruku_n}
+        where rukuid = #{rukuid}
+    </update>
+    <delete id="deleteRuku" parameterType="Ruku">
+        delete from ruku where rukuid = #{rukuid}
+    </delete>
 </mapper>
